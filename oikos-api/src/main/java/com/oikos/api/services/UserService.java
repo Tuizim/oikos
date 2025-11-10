@@ -28,4 +28,13 @@ public class UserService {
             ()-> new OikosException(OikosErrorCatalog.USUARIO_NAO_ENCONTRADO)
         );
     }
+    public void deleteByUuid(UUID uuid){
+        if(userRepository.existsByUuid(uuid)){
+            userRepository.removeByUuid(uuid);
+            return;
+        }
+        throw new RuntimeException(
+            new OikosException(OikosErrorCatalog.USUARIO_NAO_ENCONTRADO)
+        );
+    }
 }

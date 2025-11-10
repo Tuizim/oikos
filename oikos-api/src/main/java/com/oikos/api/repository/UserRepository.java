@@ -13,4 +13,6 @@ import com.oikos.api.entity.User;
 public interface UserRepository extends JpaRepository<User,Long> {
     Optional<User> findByUuid(UUID uuid);
     UserDetails findByLogin(String login);
+    boolean existsByUuid(UUID uuid);
+    void removeByUuid(UUID uuid);
 }
