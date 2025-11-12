@@ -19,7 +19,6 @@ import { Router } from '@angular/router';
 export class LoginFormComponent {
   private authService = inject(AuthService)
   private fb = inject(NonNullableFormBuilder);
-  private route = inject(Router)
 
   validateForm = this.fb.group({
     username: this.fb.control('', [Validators.required]),

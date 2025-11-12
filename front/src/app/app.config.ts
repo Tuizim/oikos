@@ -11,6 +11,7 @@ import pt from '@angular/common/locales/pt';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { authInterceptor } from './core/interceptors/auth-interceptor';
+import { loadingInterceptor } from './core/interceptors/loading-interceptor';
 
 registerLocaleData(pt);
 
@@ -23,6 +24,6 @@ export const appConfig: ApplicationConfig = {
     provideNzIcons(icons), 
     provideNzI18n(pt_BR), 
     provideAnimationsAsync(), 
-    provideHttpClient(withInterceptors([authInterceptor]))
+    provideHttpClient(withInterceptors([authInterceptor,loadingInterceptor]))
   ]
 };

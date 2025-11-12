@@ -1,15 +1,22 @@
 @import "../../../styles/main.less";
-main{
+
+main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
 }
 
-section{
+section {
     display: flexbox;
     justify-content: center;
-    width: 25%;
+    min-width: 25rem;
     box-shadow: @shadow-1;
     padding: 2rem;
+}
+
+.login-loading {
+    position: absolute;
+    bottom: 20%;
 }

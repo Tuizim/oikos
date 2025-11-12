@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { AuthModel, AuthReturnToken } from '../interfaces/authModel';
-import { Observable } from 'rxjs';
+import { delay, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -31,16 +31,17 @@ export class AuthService {
         password: loginForm.password
       }
 
-      this.login(loginData).subscribe({
-        next: (res) => {
-          localStorage.setItem(this.KEY, res.token.toString())
-          this.route.navigate(["/welcome"])
-        },
-        error: (err) => {
-          console.error('Erro no login:', err);
-          alert('Usuário ou senha inválidos.');
-        }
-      })
+      this.login(loginData)
+        .subscribe({
+          next: (res) => {
+            localStorage.setItem(this.KEY, res.token.toString())
+            this.route.navigate(["/welcome"])
+          },
+          error: (err) => {
+            console.error('Erro no login:', err);
+            alert('Usuário ou senha inválidos.');
+          }
+        })
 
     }
   }
