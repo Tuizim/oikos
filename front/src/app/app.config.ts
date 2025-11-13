@@ -10,8 +10,8 @@ import { registerLocaleData } from '@angular/common';
 import pt from '@angular/common/locales/pt';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
-import { authInterceptor } from './core/interceptors/auth-interceptor';
-import { loadingInterceptor } from './core/interceptors/loading-interceptor';
+import { authInterceptor } from './core/interceptors/auth/auth-interceptor';
+import { loadingInterceptor } from './core/interceptors/loading/loading-interceptor';
 
 registerLocaleData(pt);
 
