@@ -20,9 +20,6 @@ public class City {
     @Column(nullable = false, columnDefinition = "text", name = "name")
     private String name;
 
-    @Column(nullable = false, columnDefinition = "text", name = "code", length = 2)
-    private String code;
-
     @ManyToOne(optional = false)
     @JoinColumn(name = "state_id", nullable = false)
     private State state;
