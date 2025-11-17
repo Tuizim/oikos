@@ -9,7 +9,9 @@ import { pt_BR, provideNzI18n } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import pt from '@angular/common/locales/pt';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { authInterceptor } from './core/interceptors/auth/auth-interceptor';
+import { loadingInterceptor } from './core/interceptors/loading/loading-interceptor';
 
 registerLocaleData(pt);
 
@@ -17,6 +19,11 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
-    provideRouter(routes), provideClientHydration(withEventReplay()), provideNzIcons(icons), provideNzI18n(pt_BR), provideAnimationsAsync(), provideHttpClient()
+    provideRouter(routes), 
+    provideClientHydration(withEventReplay()), 
+    provideNzIcons(icons), 
+    provideNzI18n(pt_BR), 
+    provideAnimationsAsync(), 
+    provideHttpClient(withInterceptors([authInterceptor,loadingInterceptor]))
   ]
 };

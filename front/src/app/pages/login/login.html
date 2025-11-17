@@ -2,4 +2,9 @@
     <section>
         <app-login-form></app-login-form>
     </section>
+    @if (loadingService.loading$ | async) {
+        <div class="login-loading">
+            <app-loading></app-loading>
+        </div>
+    }
 </main>

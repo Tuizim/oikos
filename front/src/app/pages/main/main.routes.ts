@@ -2,6 +2,7 @@ import { Routes } from "@angular/router";
 import { Welcome } from "../layouts/welcome/welcome";
 import { Monitor } from "../layouts/monitor/monitor";
 import { Main } from "./main";
+import { authGuard } from "../../core/guard/auth-guard";
 
 export const MAIN_ROUTES: Routes = [
   {
@@ -9,8 +10,8 @@ export const MAIN_ROUTES: Routes = [
     component: Main,
     children: [
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-      { path: 'welcome', component: Welcome },
-      { path: 'monitor', component: Monitor },
+      { path: 'welcome', component: Welcome, canActivate: [authGuard] },
+      { path: 'monitor', component: Monitor, canActivate: [authGuard] },
     ],
   },
 ];

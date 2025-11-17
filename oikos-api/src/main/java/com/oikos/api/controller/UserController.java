@@ -3,10 +3,9 @@ package com.oikos.api.controller;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.oikos.api.dto.user.UserResponseDTO;
 import com.oikos.api.services.UserService;
@@ -21,5 +20,12 @@ public class UserController {
     @GetMapping("/{uuid}")
     public UserResponseDTO findByUuid(@PathVariable UUID uuid) {
         return userService.findDtoByUuid(uuid);
+    }
+
+    @DeleteMapping("/{uuid}")
+    @Transactional
+    public ResponseEntity deleteByUuid(@PathVariable UUID uuid){
+        userService.deleteByUuid(uuid);
+        return ResponseEntity.ok().build();
     }
 }

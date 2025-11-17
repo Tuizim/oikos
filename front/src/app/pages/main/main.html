@@ -1,19 +1,13 @@
 <nz-layout class="app-layout">
-  <nz-sider class="menu-sidebar"
-    nzCollapsible
-    [nzTheme] = 'theme'
-    nzWidth="256px"
-    nzBreakpoint="md"
-    [(nzCollapsed)]="isCollapsed"
-    [nzTrigger]="null"
-  >
+  <nz-sider class="menu-sidebar" nzCollapsible [nzTheme]='theme' nzWidth="256px" nzBreakpoint="md"
+    [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
     <div class="sidebar-logo">
       <a href="https://ng.ant.design/" target="_blank">
         <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
         <h1>Ant Design of Angular</h1>
       </a>
     </div>
-    <ul nz-menu [nzTheme] = 'theme' nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+    <ul nz-menu [nzTheme]='theme' nzMode="inline" [nzInlineCollapsed]="isCollapsed">
       <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
         <ul>
           <li nz-menu-item nzMatchRouter>
@@ -43,9 +37,7 @@
           <nz-icon class="trigger" [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'" />
         </span>
         <div class="header-options">
-          <span nz-tooltip="Logout" (click)="logout()" class="span-logout">
-            <nz-icon nzType="logout" nzTheme="outline" class="logout"/>
-          </span>
+          <app-logout></app-logout>
         </div>
       </div>
     </nz-header>
@@ -56,3 +48,5 @@
     </nz-content>
   </nz-layout>
 </nz-layout>
+
+

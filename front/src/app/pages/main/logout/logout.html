@@ -1,0 +1,15 @@
+<span nz-tooltip="Logout" (click)="showModal()" class="span-logout">
+    <nz-icon nzType="logout" nzTheme="outline" class="logout" />
+</span>
+
+
+<nz-modal [(nzVisible)]="logoutModalIsVisible" nzTitle="Sair agora?" (nzOnCancel)="handleCancel()" (nzOnOk)="logout()"
+    [nzContent]="modalContent" [nzFooter]="modalFooter">
+    <ng-template #modalContent>
+        <p>Você poderá entrar novamente a qualquer momento usando suas credenciais.</p>
+    </ng-template>
+    <ng-template #modalFooter>
+        <button nz-button nzType="default" (click)="handleCancel()">Cancelar</button>
+        <button nz-button nzType="primary" (click)="logout()">Sair</button>
+    </ng-template>
+</nz-modal>

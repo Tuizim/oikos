@@ -7,6 +7,7 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { AuthService } from '../../../service/auth-service';
 import { LoginFormValue } from '../interface/loginInterface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
@@ -18,6 +19,7 @@ import { LoginFormValue } from '../interface/loginInterface';
 export class LoginFormComponent {
   private authService = inject(AuthService)
   private fb = inject(NonNullableFormBuilder);
+
   validateForm = this.fb.group({
     username: this.fb.control('', [Validators.required]),
     password: this.fb.control('', [Validators.required]),
@@ -26,8 +28,8 @@ export class LoginFormComponent {
 
   submitForm(): void {
     if (this.validateForm.valid) {
-      const loginValid = this.validateForm.value as LoginFormValue
-      this.authService.authenticateLogin(loginValid)
+      const loginValid = this.validateForm.value as LoginFormValue;
+      this.authService.authenticateLogin(loginValid);
     } else {
       Object.values(this.validateForm.controls).forEach(control => {
         if (control.invalid) {
