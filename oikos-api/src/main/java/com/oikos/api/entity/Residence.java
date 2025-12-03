@@ -56,7 +56,7 @@ public class Residence {
     @Column(nullable = false, name = "description")
     private String description;
 
-    @ManyToOne(optional = false)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", nullable = false)
     private Address address;
 

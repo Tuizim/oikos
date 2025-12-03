@@ -1,8 +1,8 @@
 package com.oikos.api.dto.residence;
 
-import com.oikos.api.enums.ImageType;
 import com.oikos.api.enums.PropertyType;
 import com.oikos.api.enums.ResidenceStatus;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -19,34 +19,39 @@ import java.util.UUID;
 @AllArgsConstructor
 public class ResidenceCreateDTO {
 
-        @NotNull
+        @NotNull(message = ResidenceErrorCatalog.OWNER_REQUIRED)
         private UUID ownerId;
 
-        @NotBlank
+        @NotBlank(message = ResidenceErrorCatalog.NAME_REQUIRED)
         private String name;
 
-        @NotNull
+        @NotNull(message = ResidenceErrorCatalog.PROPERTY_TYPE_REQUIRED)
         private PropertyType propertyType;
 
         @NotNull
+        @Min(value = 0, message = ResidenceErrorCatalog.BEDROOMS_NEGATIVE)
         private Integer bedrooms;
 
         @NotNull
+        @Min(value = 0, message = ResidenceErrorCatalog.BATHROOMS_NEGATIVE)
         private Integer bathrooms;
 
         @NotNull
+        @Min(value = 0, message = ResidenceErrorCatalog.GARAGE_SPOT_NEGATIVE)
         private Integer garageSpots;
 
+        @Min(value = 0, message = ResidenceErrorCatalog.USABLE_AREA_NEGATIVE)
         private BigDecimal usableArea;
 
+        @Min(value = 0, message = ResidenceErrorCatalog.TOTAL_AREA_NEGATIVE)
         private BigDecimal totalArea;
 
-        @NotNull
+        @NotNull(message = ResidenceErrorCatalog.STATUS_REQUIRED)
         private ResidenceStatus status;
 
-        @NotBlank
+        @NotBlank(message = ResidenceErrorCatalog.STATUS_REQUIRED)
         private String description;
 
-        @NotNull
+        @NotNull(message = ResidenceErrorCatalog.ADDRESS_REQUIRED)
         private AddressCreateDTO address;
 }
