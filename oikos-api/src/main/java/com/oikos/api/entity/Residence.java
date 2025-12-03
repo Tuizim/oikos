@@ -58,7 +58,7 @@ public class Residence {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "address_id", nullable = false)
-    private Address address_id;
+    private Address address;
 
     @Builder.Default
     @Column(name = "created_at", updatable = false, insertable = false,

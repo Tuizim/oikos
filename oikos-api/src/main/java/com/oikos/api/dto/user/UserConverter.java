@@ -1,7 +1,9 @@
 package com.oikos.api.dto.user;
 
 import com.oikos.api.entity.User;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserConverter {
     public UserResponseDTO entityToResponseDto(User entity) {
         return UserResponseDTO.builder()
