@@ -26,4 +26,18 @@ public class ResidenceConverter {
                 .updatedAt(entity.getUpdatedAt())
                 .build();
     }
+    public Residence toEntity(ResidenceCreateDTO dto){
+        return Residence.builder()
+                .owner_id(dto.getOwnerId())
+                .name(dto.getName())
+                .propertyType(dto.getPropertyType())
+                .bedrooms(dto.getBedrooms())
+                .bathrooms(dto.getBathrooms())
+                .garage_spots(dto.getGarageSpots())
+                .usableArea(dto.getUsableArea())
+                .total_area(dto.getTotalArea())
+                .status(dto.getStatus())
+                .description(dto.getDescription())
+                .build();
+    }
 }

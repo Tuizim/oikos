@@ -22,4 +22,14 @@ public class AddressConverter {
                 .updatedAt(entity.getUpdatedAt())
                 .build();
     }
+    public Address toEntity(AddressCreateDTO dto){
+        return Address.builder()
+                .postal_code(dto.getPostalCode())
+                .street(dto.getStreet())
+                .number(dto.getNumber())
+                .complement(dto.getComplement())
+                .reference(dto.getReference())
+                .neighborhood(dto.getNeighborhood())
+                .build();
+    }
 }
