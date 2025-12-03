@@ -13,6 +13,5 @@ public class ResidenceErrorCatalog{
     public static final String TOTAL_AREA_NEGATIVE = ERROR_PREFIX + "008";
     public static final String STATUS_REQUIRED = ERROR_PREFIX + "009";
     public static final String ADDRESS_REQUIRED = ERROR_PREFIX + "009";
-    public static final String CITY_NOT_FOUND = ERROR_PREFIX + "010";;
-
+    public static final String CITY_NOT_FOUND = ERROR_PREFIX + "010";
 }
