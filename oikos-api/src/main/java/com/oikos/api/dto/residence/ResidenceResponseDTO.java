@@ -36,12 +36,6 @@ public class ResidenceResponseDTO {
 
     private AddressResponseDTO address;
 
-    private String imageFileName;
-
-    private ImageType imageMimeType;
-
-    private String imageBase64;
-
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;

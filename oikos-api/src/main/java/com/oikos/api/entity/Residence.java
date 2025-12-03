@@ -60,17 +60,6 @@ public class Residence {
     @JoinColumn(name = "address_id", nullable = false)
     private Address address_id;
 
-    @Column(nullable = false, name = "image_file_name")
-    private String image_file_name;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "image_mime_type", nullable = false)
-    private ImageType image_mime_type;
-
-    @Lob
-    @Column(name = "image_data", nullable = true)
-    private byte[] imageData;
-
     @Builder.Default
     @Column(name = "created_at", updatable = false, insertable = false,
             columnDefinition = "timestamp without time zone DEFAULT CURRENT_TIMESTAMP")

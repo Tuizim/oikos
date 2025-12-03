@@ -49,12 +49,4 @@ public class ResidenceCreateDTO {
 
         @NotNull
         private AddressCreateDTO address;
-
-        @NotBlank
-        private String imageFileName;
-
-        @NotNull
-        private ImageType imageMimeType;
-
-        private String imageBase64;
 }
