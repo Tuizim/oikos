@@ -3,6 +3,7 @@ package com.oikos.api.dto.residence;
 import com.oikos.api.dto.errorCatalog.ResidenceErrorCatalog;
 import com.oikos.api.enums.PropertyType;
 import com.oikos.api.enums.ResidenceStatus;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -54,5 +55,6 @@ public class ResidenceCreateDTO {
         private String description;
 
         @NotNull(message = ResidenceErrorCatalog.ADDRESS_REQUIRED)
+        @Valid
         private AddressCreateDTO address;
 }
