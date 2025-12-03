@@ -1,4 +1,4 @@
-package com.oikos.api.dto.residence;
+package com.oikos.api.dto.errorCatalog;
 
 public class ResidenceErrorCatalog{
     private static final String ERROR_PREFIX = "RESIDENCE-";

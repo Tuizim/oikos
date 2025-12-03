@@ -1,5 +1,6 @@
 package com.oikos.api.dto.residence;
 
+import com.oikos.api.dto.errorCatalog.ResidenceErrorCatalog;
 import com.oikos.api.enums.PropertyType;
 import com.oikos.api.enums.ResidenceStatus;
 import jakarta.validation.constraints.Min;
