@@ -4,6 +4,8 @@ import java.util.UUID;
 
 import com.oikos.api.dto.authentication.RegisterDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -56,7 +58,13 @@ public class UserService {
         this.userRepository.save(newUser);
     }
 
-    public UserDetails findByUsername(String username){
+    public User findByUsername(String username){
         return userRepository.findByUsername(username);
+    }
+
+    public UserResponseDTO findRequester(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        return userConverter.entityToResponseDto(findByUsername(userDetails.getUsername()));
     }
 }
