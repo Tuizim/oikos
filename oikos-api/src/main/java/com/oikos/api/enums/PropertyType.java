@@ -8,7 +8,6 @@ public enum PropertyType {
     APARTMENT("Apartamento"),
     KITNET("Kitnet"),
     STUDIO("Studio"),
-    CONDOMINIUM("Condomínio"),
     RURAL("Propriedade Rural"),
     COMMERCIAL("Comercial"),
     OFFICE("Escritório"),
