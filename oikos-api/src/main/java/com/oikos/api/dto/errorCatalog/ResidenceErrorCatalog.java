@@ -21,5 +21,5 @@ public class ResidenceErrorCatalog{
     public static final String USABLE_AREA_MUST_BE_POSITIVE_FOR_APARTMENT = ERROR_PREFIX + "016";
     public static final String BEDROOM_MUST_BE_POSITIVE_FOR_RESIDENTIAL = ERROR_PREFIX + "017";
     public static final String BATHROOM_MUST_BE_POSITIVE_FOR_RESIDENTIAL = ERROR_PREFIX + "018";
-
+    public static final String DESCRIPTION_REQUIRED = ERROR_PREFIX + "019";
 }

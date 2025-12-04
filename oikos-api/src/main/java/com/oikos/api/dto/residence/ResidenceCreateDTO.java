@@ -51,7 +51,7 @@ public class ResidenceCreateDTO {
         @NotNull(message = ResidenceErrorCatalog.STATUS_REQUIRED)
         private ResidenceStatus status;
 
-        @NotBlank(message = ResidenceErrorCatalog.STATUS_REQUIRED)
+        @NotBlank(message = ResidenceErrorCatalog.DESCRIPTION_REQUIRED)
         private String description;
 
         @NotNull(message = ResidenceErrorCatalog.ADDRESS_REQUIRED)
