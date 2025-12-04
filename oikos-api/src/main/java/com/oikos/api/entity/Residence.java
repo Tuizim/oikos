@@ -1,6 +1,5 @@
 package com.oikos.api.entity;
 
-import com.oikos.api.enums.ImageType;
 import com.oikos.api.enums.PropertyType;
 import com.oikos.api.enums.ResidenceStatus;
 import jakarta.persistence.*;
@@ -25,7 +24,7 @@ public class Residence {
     private Long id;
 
     @Column(nullable = false,name = "owner_id")
-    private UUID owner_id;
+    private UUID ownerId;
 
     @Column(nullable = false,name = "name")
     private String name;
