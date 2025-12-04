@@ -40,13 +40,13 @@ public class Residence {
     private Integer bathrooms;
 
     @Column(nullable = false, name = "garage_spots")
-    private Integer garage_spots;
+    private Integer garageSpots;
 
     @Column(name = "usable_area", precision = 10, scale = 2)
     private BigDecimal usableArea;
 
     @Column(name = "total_area", precision = 10, scale = 2)
-    private BigDecimal total_area;
+    private BigDecimal totalArea;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
