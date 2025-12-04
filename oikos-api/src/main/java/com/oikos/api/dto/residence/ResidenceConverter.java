@@ -11,7 +11,7 @@ public class ResidenceConverter {
     public ResidenceResponseDTO toDto(Residence entity){
         return ResidenceResponseDTO.builder()
                 .id(entity.getId())
-                .ownerId(entity.getOwner_id())
+                .ownerId(entity.getOwnerId())
                 .name(entity.getName())
                 .propertyType(entity.getPropertyType())
                 .bedrooms(entity.getBedrooms())
@@ -28,7 +28,7 @@ public class ResidenceConverter {
     }
     public Residence toEntity(ResidenceCreateDTO dto){
         return Residence.builder()
-                .owner_id(dto.getOwnerId())
+                .ownerId(dto.getOwnerId())
                 .name(dto.getName())
                 .propertyType(dto.getPropertyType())
                 .bedrooms(dto.getBedrooms())
